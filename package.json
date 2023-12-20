@@ -1,6 +1,6 @@
 {
   "name": "@shreklabs/core",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Core functions/constants/utils",
   "author": "Ruminat",
   "license": "MIT",
@@ -12,6 +12,7 @@
     "dist"
   ],
   "scripts": {
+    "package": "npm run build && npm run test && npm publish --access public",
     "dev": "tsc && vite build --watch",
     "test": "vitest --run",
     "test-dev": "vitest --run",
