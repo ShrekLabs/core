@@ -11,5 +11,5 @@ npm i @shreklabs/core
 
 ## Useful links
 
-- [Docs](https://shreklabs.github.io/core/).
+- [Docs](https://shreklabs.github.io/core/modules.html).
 - [NPM package](https://www.npmjs.com/package/@shreklabs/core).
