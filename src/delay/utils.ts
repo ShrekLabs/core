@@ -1,9 +1,18 @@
+/**
+ * @category Delay
+ */
 export const cancelDelay = Symbol("cancelDelay");
 
+/**
+ * @category Delay
+ */
 export type Cancellable = Promise<void> & {
   [cancelDelay]: () => void;
 };
 
+/**
+ * @category Delay
+ */
 export function delay(ms: number): Cancellable {
   let timerId: number | undefined;
 
