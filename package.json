@@ -12,7 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "before-publish": "npm run build && npm run test",
+    "before-publish": "npm run build && npm run test && npm run build:docs",
     "publish-patch": "npm run before-publish && npm version patch && npm publish --access public",
     "publish-minor": "npm run before-publish && npm version minor && npm publish --access public",
     "publish-major": "npm run before-publish && npm version major && npm publish --access public",
@@ -22,6 +22,7 @@
     "start": "vite --host --open",
     "build": "tsc && vite build",
     "build:types": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+    "build:docs": "typedoc src/index.ts",
     "lint:scripts": "eslint . --ext .ts",
     "lint:styles": "stylelint ./**/*.{css,scss}",
     "format:scripts": "prettier . --write",
@@ -36,6 +37,7 @@
     "eslint-plugin-prettier": "^5.1.0",
     "immer": "^10.0.3",
     "prettier": "^3.1.1",
+    "typedoc": "^0.25.4",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",
     "vite-plugin-dts": "^3.6.4",
