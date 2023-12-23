@@ -9,6 +9,7 @@ npm i immer
 npm i @shreklabs/core
 ```
 
-## Docs
+## Useful links
 
-You can find the docs [here](./docs).
+- [Docs](https://shreklabs.github.io/core/).
+- [NPM package](https://www.npmjs.com/package/@shreklabs/core).
