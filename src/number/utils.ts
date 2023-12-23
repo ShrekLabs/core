@@ -1,5 +1,5 @@
 /**
- * @category Number utils
+ * @category Number
  * @example
  * prettyNumber(123456789) = "123,456,789"
  */
@@ -9,7 +9,7 @@ export function prettyNumber(n: number): string {
 
 /**
  * Turns progress (0 to 1) into percents (0 to 100).
- * @category Number utils
+ * @category Number
  * @example
  * progressToPercents(0.13) = 13
  */

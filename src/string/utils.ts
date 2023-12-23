@@ -1,6 +1,6 @@
 /**
  * Makes the first symbol uppercase and leaves the rest unchanged.
- * @category String utils
+ * @category String
  * @example
  * capitalize("what is love?") === "What is love?"
  * capitalize("") === ""
@@ -13,7 +13,7 @@ export function capitalize(str: string): string {
 
 /**
  * Turns a `string` into a `number` if it's a valid number, returns `undefined` otherwise;
- * @category String utils
+ * @category String
  * @example
  * stringToNumberOrUndefined("618") === 618
  * stringToNumberOrUndefined("3.14") === 3.14
@@ -32,14 +32,14 @@ export function stringToNumberOrUndefined(str: string): number | undefined {
 const numberFormatter = new Intl.NumberFormat();
 
 /**
- * @category String utils
+ * @category String
  */
 export function formatNumber(n: number): string {
   return numberFormatter.format(n);
 }
 
 /**
- * @category String utils
+ * @category String
  */
 export function stringToLines(str: string): string[] {
   return str
