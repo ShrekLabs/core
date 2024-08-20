@@ -63,9 +63,35 @@ export async function asyncNoop(..._args: any[]): Promise<any> {}
 /**
  * @category Core
  */
-export function getGlobalyUniqueId(prefix?: string): string {
-  const stringPrefix = prefix ? `${prefix}-` : "";
-  return `${stringPrefix}${Date.now()}${Math.random()}${Math.random()}`;
+export const asBase36 = (n: number) => n.toString(36);
+/**
+ * @category Core
+ */
+export const dateNowAsBase36 = () => asBase36(Date.now());
+/**
+ * @category Core
+ */
+export const mathRandomAsBase36 = () => asBase36(Math.random()).replace("0.", "");
+
+/**
+ * @category Core
+ */
+export function getAlmostGloballyUniqueId(prefix?: string) {
+  const uniquePart = `${dateNowAsBase36().substring(4)}${mathRandomAsBase36().substring(0, 4)}`;
+  return prefix ? `${prefix}-${uniquePart}` : uniquePart;
+}
+
+let counter = 0;
+let lastGetGloballyUniqueIdDate = Date.now();
+/**
+ * @category Core
+ */
+export function getGloballyUniqueId(prefix?: string) {
+  const newDate = Date.now();
+  const uniquePart = `${dateNowAsBase36()}${asBase36(counter)}${mathRandomAsBase36()}`;
+  counter = newDate === lastGetGloballyUniqueIdDate ? counter + 1 : 0;
+  lastGetGloballyUniqueIdDate = newDate;
+  return prefix ? `${prefix}-${uniquePart}` : uniquePart;
 }
 
 /**
